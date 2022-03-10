@@ -12,7 +12,6 @@ import sys
 
 def plusMinus(arr):
     arr_len = len(arr)
-    num_ = []
     plus_count = 0
     minus_count = 0
     zero_count = 0
@@ -29,8 +28,6 @@ def plusMinus(arr):
     
 
 if __name__ == '__main__':
-    n = int(input().strip())
-
-    arr = list(map(int, input().rstrip().split()))
+    arr = [-4, 3, -9, 0, 4, 1]
 
     plusMinus(arr)
