@@ -16,9 +16,18 @@ import sys
 #
 
 def flippingMatrix(matrix):
-    row = len(matrix)
-    col = len(matrix[0])
-    
+    sum = 0
+    quadSize = int(len(matrix)/2)
+    # sum 2x2 rows and columns
+    for r in range(quadSize):
+        for j in range(quadSize):
+            p1 = matrix[r][j]
+            p2 = matrix[r][j+1]
+            p3 = matrix[r+1][j]
+            p4 = matrix[r+1][j+1]
+            sum += p1 + p2 + p3 + p4
+    return sum
+
     
 
 if __name__ == '__main__':
@@ -26,5 +35,6 @@ if __name__ == '__main__':
 
     for q_itr in range(q):
         n = 2
-        matrix = [[112, 42, 83, 119], [1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]
-    print(flippingMatrix(matrix))
+        matrix = [[1, 2, 3, 4], [3, 4, 5, 6], [5, 6, 7, 8], [7, 8, 9, 10]]
+        result = flippingMatrix(matrix)
+        print(result)
