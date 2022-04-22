@@ -1,6 +1,4 @@
-import re
-
-
+```python
 def narcissistic( value ):
     # pisahkan value menjadi list
     value_now = [int(i) for i in list(str(value))]
@@ -15,3 +13,4 @@ def narcissistic( value ):
 
 if __name__ == '__main__':
     print(narcissistic( 371 ))
+```

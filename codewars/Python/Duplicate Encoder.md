@@ -1,3 +1,4 @@
+```python
 def duplicate_encode(word):
     word = word.lower()
     emote_word = ""
@@ -9,3 +10,4 @@ def duplicate_encode(word):
     return emote_word
     
 print(duplicate_encode("dragon noid is the best"))
+```
