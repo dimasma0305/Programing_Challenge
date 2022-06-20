@@ -10,13 +10,15 @@ func LongestConsec(strarr []string, k int) string {
 		return ""
 	}
 	max := 0
+	var Mystr string
 	for i := 0; i < len(strarr)-k+1; i++ {
-		if len(strarr[i:i+k]) > max {
-			max = len(strarr[i:i+k])
+		if len(strings.Join(strarr[i:i+k], "")) > max {
+			max = len(strings.Join(strarr[i:i+k], ""))
+			Mystr = strings.Join(strarr[i:i+k], "")
 		}
 	}
-	return strings.Join(strarr[:max], "")
-	
+	// fmt.Println(len(strings.Join(strarr[0:2], "")))
+	return Mystr
 }
 
 func main() {
