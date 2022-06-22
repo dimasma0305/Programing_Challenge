@@ -3,16 +3,11 @@ package main
 import "fmt"
 
 func PartsSums(ls []uint64) []uint64 {
-	var sum []uint64
 	var sum2 uint64
-	lenLs := len(ls)
-	for j := 0; j < lenLs; j++ {
-		sum2 += ls[j:]
-		sum = append(sum, sum2)
-		sum2 = 0
+	for _, v := range ls {
+		sum2 += v
 	}
-	sum = append(sum, 0)
-	return sum
+	return sum2
 }
 
 func main() {
