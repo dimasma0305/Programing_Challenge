@@ -14,6 +14,7 @@ func Rot13(msg string) string {
 				i -= 26
 			}
 		}
+		
 		if i >= 'A' && i <= 'Z' {
 			i += 13
 			if i > 'Z' {
@@ -25,5 +26,5 @@ func Rot13(msg string) string {
 	return strings.Join(enc, "")
 }
 func main() {
-	fmt.Println(Rot13("dimas maulana"))
+	fmt.Println(Rot13("dimas"))
 }
