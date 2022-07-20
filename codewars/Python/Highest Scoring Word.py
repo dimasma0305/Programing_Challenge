@@ -21,8 +21,8 @@ def high(x):
     sm[alp] = sum(dic.values())
     return max(sm, key=sm.get)
 
-def high(x):
-    print(x.split())
-    return max(x.split(), key=lambda k: sum(ord(c) - 96 for c in k))
+# def high(x):
+#     print(x.split())
+#     return max(x.split(), key=lambda k: sum(ord(c) - 96 for c in k))
 
 print(high("ab ac cd"))
