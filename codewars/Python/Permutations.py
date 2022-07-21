@@ -1,24 +1,3 @@
-'''
-# old method
-def permutations(string):
-    if len(string) ==  1: 
-        return [string]
-    string = [i for i in string]
-    ls_perm = []
-    # print(string)
-    for i in string:
-        # print(i)
-        tmp = string.copy()
-        tmp.remove(i)
-        # print(tmp)
-        for j in range(len(tmp)):
-            print(tmp[j:]+tmp[:j])
-            foo = i + ''.join(tmp[j:]+tmp[:j])
-            # if foo not in ls_perm:
-            ls_perm.append(foo)
-    return ls_perm
-'''
-
 
 def permutations(string):
     result = set([string])
