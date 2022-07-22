@@ -1,3 +1,4 @@
+'''medhot 1
 from itertools import combinations
 import cProfile
 
@@ -40,3 +41,27 @@ class ballanced_parentheses:
 balanced_parens = lambda n: ballanced_parentheses(n).get_brackets()
 print(balanced_parens(1))
 # cProfile.run('balanced_parens(7)')
+'''
+
+
+class ballanced_parentheses:
+    def __init__(self, n) -> None:
+        self.store_brackets = []
+        self.par_print = self.generateParenthesis(n, 0, 0, "", self.store_brackets)
+    
+    def generateParenthesis(self, n,  Open,  close,  s, ans:list) -> None:
+        if(Open == n and close == n):
+            ans.append(s)
+            return
+        if(Open < n):
+            self.generateParenthesis(n, Open+1, close, s+"(", ans)
+        if(close < Open):
+            self.generateParenthesis(n, Open, close + 1, s+")", ans)
+             
+    def get_brackets(self) -> list:
+        return self.store_brackets
+
+balanced_parens = lambda n: ballanced_parentheses(n).get_brackets()
+
+
+print(len(balanced_parens(5)))
