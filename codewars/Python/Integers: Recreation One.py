@@ -65,6 +65,8 @@ def list_squared(m, n):
 #         if (sum_factors**0.5).is_integer():
 #             ary.append([i, sum_factors])
 #     return ary
+
+
 import time
 # start timer
 t0 = time.time()
