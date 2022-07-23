@@ -2,6 +2,7 @@ import collections
 import itertools
 from math import sqrt
 
+
 def prime_factors(n):
     i = 2
     while i * i <= n:
@@ -14,11 +15,13 @@ def prime_factors(n):
     if n > 1:
         yield n
 
+
 def prod(iterable):
     result = 1
     for i in iterable:
         result *= i
     return result
+
 
 def get_divisors(n):
     pf = prime_factors(n)
@@ -32,6 +35,7 @@ def get_divisors(n):
 
     for prime_power_combo in itertools.product(*powers):
         yield prod(prime_power_combo)
+
 
 def list_squared(m, n):
     solution = []
@@ -49,24 +53,21 @@ def list_squared(m, n):
             solution.append([i, int(div_v1_sum)])
     return solution
 
-from functools import reduce
+# from functools import reduce
 
-def square_factors(n):
-    
-    return set(reduce(list.__add__, 
-                     ( [i**2, (n//i)**2] for i in range(1, int(n**0.5) + 1) if n % i == 0) ))
-
-def list_squared(a, b):
-    
-    ary = []
-    
-    for i in range(a, b + 1):
-        
-        sum_factors = sum(square_factors(i))
-        
-        if (sum_factors**0.5).is_integer():
-            
-            ary.append([i, sum_factors])
-            
-    return ary
+# def square_factors(n):
+#     return set(reduce(list.__add__,
+#                      ( [i**2, (n//i)**2] for i in range(1, int(n**0.5) + 1) if n % i == 0) ))
+# def list_squared(a, b):
+#     ary = []
+#     for i in range(a, b + 1):
+#         sum_factors = sum(square_factors(i))
+#         if (sum_factors**0.5).is_integer():
+#             ary.append([i, sum_factors])
+#     return ary
+import time
+# start timer
+t0 = time.time()
 print(list_squared(1, 250000))
+t1 = time.time() - t0
+print(t1)
