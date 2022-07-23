@@ -1,5 +1,4 @@
-def are_you_playing_banjo(name):
-    print(name[0].lower() == "r")
-    return (name+" does not play banjo" if name[0].lower() != "r" else name+" plays banjo")
+def open_or_senior(data: list):
+    return ["Senior" if j[0] >= 55 and j[1] > 7 else "Open" for j in data]
 
-print(are_you_playing_banjo("ringo"))
+print(open_or_senior([(74, 10), (55, 6), (12, -2), (68, 7)]))
