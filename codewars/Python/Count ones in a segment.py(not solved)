@@ -1,0 +1,19 @@
+def cnt_bin(n: int):
+    bits = n.bit_length()
+    # print(bits)
+    s = 0
+    for i in range(bits):
+        s += (n // 2**(i+1))*2**i
+        if n % 2**(i+1) > 2**i:
+            s += 2**i
+        else:
+            s += (n % 2**(i+1))
+        n -= 2**i
+    print(s)
+    return s
+
+def count_ones(left, right):
+    n = cnt_bin(right) - cnt_bin(left)
+    return n
+
+print(count_ones(3,4))
